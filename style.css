@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap');
+
+:root {
+  font-size: 62.5%;
+  --color-rangoon-green: hsl(0, 0%, 11%);
+  --color-mirage: hsl(248, 14%, 11%);
+  --color-liver: hsl(0, 0%, 31%);
+  --color-white: hsl(0, 0%, 100%);
+
+  --bg-primary: var(--color-rangoon-green);
+  --clr-primary: var(--color-mirage);
+  --clr-secondary: var(--color-liver);
+  --clr-tertiary: var(--color-white);
+  --ff-primary: 'Inter', sans-serif;
+  --border-radius: calc((10 / 16) * 1rem);
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  font-family: var(--ff-primary);
+
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.app {
+  background-color: var(--clr-tertiary);
+  border-radius: var(--border-radius);
+  max-width: calc((700 / 16) * 1em);
+  text-align: center;
+  overflow: hidden;
+
+  /* display: grid;
+  grid-template: min-content 1fr / 1fr; */
+}
+
+.app__header {
+  background: linear-gradient(246.26deg, #585dfe 0%, #fb3796 100%);
+  color: var(--clr-tertiary);
+  padding: calc((50 / 16) * 1em);
+
+  display: grid;
+  place-items: center;
+  gap: 1.25em;
+}
+
+.app__title {
+  font-size: 2.2rem;
+  font-weight: 800;
+}
+
+.app__input {
+  font-size: 9.757rem;
+  font-weight: 800;
+  color: var(--clr-tertiary);
+  text-align: center;
+  width: 60%;
+  background-color: hsla(0, 0%, 100%, 0.05);
+  border: none;
+  border-radius: var(--border-radius);
+  outline: none;
+  height: 1.1em;
+  transition: 0.2s ease-in-out;
+}
+
+.app__input:hover {
+  background-color: hsla(0, 0%, 100%, 0.2);
+  cursor: pointer;
+}
+
+.app__input:focus {
+  background-color: hsla(0, 0%, 100%, 0.2);
+  cursor: text;
+}
+
+.app__results {
+  display: grid;
+  grid-template: auto / 1fr;
+  gap: calc((27 / 16) * 1em);
+
+  padding: calc((37 / 16) * 1em);
+  font-size: 1.4rem;
+}
+
+.unit {
+  display: grid;
+  gap: calc((5 / 16) * 1em);
+}
+
+.unit__title {
+  font-weight: 600;
+}
+
+.unit__data {
+  font-weight: 400;
+}
