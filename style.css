@@ -6,11 +6,13 @@
   --color-mirage: hsl(248, 14%, 11%);
   --color-liver: hsl(0, 0%, 31%);
   --color-white: hsl(0, 0%, 100%);
+  --color-ebony-clay: hsl(215, 28%, 17%);
 
   --bg-primary: var(--color-rangoon-green);
   --clr-primary: var(--color-mirage);
   --clr-secondary: var(--color-liver);
   --clr-tertiary: var(--color-white);
+  --clr-quarternary: var(--color-ebony-clay);
   --ff-primary: 'Inter', sans-serif;
   --border-radius: calc((10 / 16) * 1rem);
 }
@@ -32,7 +34,7 @@ body {
 }
 
 .app {
-  background-color: var(--clr-tertiary);
+  background-color: var(--clr-quarternary);
   border-radius: var(--border-radius);
   max-width: calc((700 / 16) * 1em);
   text-align: center;
@@ -85,6 +87,7 @@ body {
 
   padding: calc((37 / 16) * 1em);
   font-size: 1.4rem;
+  color: var(--clr-tertiary);
 }
 
 .unit {
