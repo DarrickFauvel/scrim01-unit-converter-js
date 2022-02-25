@@ -85,7 +85,7 @@ const convertInput = (e) => {
 
 updateDisplay()
 
-userInput.addEventListener('change', convertInput)
+userInput.addEventListener('keyup', convertInput)
 userInput.addEventListener('focus', () => (userInput.value = ''))
 userInput.addEventListener(
   'blur',
