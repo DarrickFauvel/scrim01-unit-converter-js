@@ -34,14 +34,10 @@ const updateDisplay = () => {
     poundsFromKilos
   } = state
 
-  const lengthDisplay = document.getElementById('length-display')
-  const volumeDisplay = document.getElementById('volume-display')
-  const massDisplay = document.getElementById('mass-display')
-
   lengthDisplay.innerHTML = /*html*/ `
     <div class="unit__title">Length (Meter/Feet)</div>
     <div class="unit__data">
-      ${numberToConvert} meters = ${feetFromMeters} feet | 
+      ${numberToConvert} meters = ${feetFromMeters} feet |
       ${numberToConvert} feet = ${metersFromFeet} meters
     </div>
   `
@@ -49,7 +45,7 @@ const updateDisplay = () => {
   volumeDisplay.innerHTML = /*html*/ `
     <div class="unit__title">Volume (Liters/Gallons)</div>
     <div class="unit__data">
-      ${numberToConvert} liters = ${gallonsFromLiters} gallons | 
+      ${numberToConvert} liters = ${gallonsFromLiters} gallons |
       ${numberToConvert} gallons = ${litersFromGallons} liters
     </div>
   `
@@ -57,7 +53,7 @@ const updateDisplay = () => {
   massDisplay.innerHTML = /*html*/ `
     <div class="unit__title">Mass (Kilograms/Pounds)</div>
     <div class="unit__data">
-      ${numberToConvert} kilos = ${poundsFromKilos} pounds | 
+      ${numberToConvert} kilos = ${poundsFromKilos} pounds |
       ${numberToConvert} pounds = ${kilosFromPounds} kilos
     </div>
   `
@@ -75,7 +71,7 @@ const convertNumber = (number) => {
   state.kilosFromPounds = doConversion('*', 0.45359237)
 }
 
-const getUserInput = (e) => {
+const convertInput = (e) => {
   e.preventDefault()
   const inputValue = parseFloat(e.target.value)
   if (isNaN(inputValue)) {
@@ -89,12 +85,9 @@ const getUserInput = (e) => {
 
 updateDisplay()
 
-userInput.addEventListener('change', getUserInput)
-userInput.addEventListener('focus', () => {
-  // userInput.style.backgroundColor = 'hsla(0, 0%, 100%, 0.2)'
-  userInput.value = ''
-})
-userInput.addEventListener('blur', () => {
-  // userInput.style.backgroundColor = 'hsla(0, 0%, 100%, 0.05)'
-  userInput.value = state.numberToConvert
-})
+userInput.addEventListener('change', convertInput)
+userInput.addEventListener('focus', () => (userInput.value = ''))
+userInput.addEventListener(
+  'blur',
+  () => (userInput.value = state.numberToConvert)
+)
